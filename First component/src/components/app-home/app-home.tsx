@@ -16,12 +16,7 @@ export class AppHome {
           web components using Stencil!
           Check out our docs on <a href='https://stenciljs.com'>stenciljs.com</a> to get started.
         </p>
-
-        <stencil-route-link url='/profile/stencil'>
-          <button>
-            Profile page
-          </button>
-        </stencil-route-link>
+        <app-button text="Button"></app-button>
       </div>
     );
   }

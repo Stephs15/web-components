@@ -16,6 +16,13 @@ import {
 
 export namespace Components {
 
+  interface AppButton {
+    'text': string;
+  }
+  interface AppButtonAttributes extends StencilHTMLAttributes {
+    'text'?: string;
+  }
+
   interface AppHome {}
   interface AppHomeAttributes extends StencilHTMLAttributes {}
 
@@ -32,17 +39,25 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'AppButton': Components.AppButton;
     'AppHome': Components.AppHome;
     'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
   }
 
   interface StencilIntrinsicElements {
+    'app-button': Components.AppButtonAttributes;
     'app-home': Components.AppHomeAttributes;
     'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
   }
 
+
+  interface HTMLAppButtonElement extends Components.AppButton, HTMLStencilElement {}
+  var HTMLAppButtonElement: {
+    prototype: HTMLAppButtonElement;
+    new (): HTMLAppButtonElement;
+  };
 
   interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
   var HTMLAppHomeElement: {
@@ -63,12 +78,14 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'app-button': HTMLAppButtonElement
     'app-home': HTMLAppHomeElement
     'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
   }
 
   interface ElementTagNameMap {
+    'app-button': HTMLAppButtonElement;
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
