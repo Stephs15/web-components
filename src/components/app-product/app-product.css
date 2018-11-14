@@ -1,0 +1,12 @@
+.product {
+    max-width: 200px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #808080;
+    text-align: center;
+    border-radius: 6px;
+}
+
+img {
+    max-width: 200px;
+}

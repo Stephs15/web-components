@@ -9,6 +9,7 @@ import { Component, Prop } from '@stencil/core';
 
 export class AppButton {
     @Prop() text: string;
+    @Prop() clickEvent: void;
 
     clickMe() {
         console.log("CLICKED!")
@@ -16,7 +17,7 @@ export class AppButton {
 
     render() {
         return (
-          <button class='app-button' onClick={() => this.clickMe()}>
+          <button class='app-button' onClick={() => this.clickEvent}>
             {this.text}
           </button>
         );
